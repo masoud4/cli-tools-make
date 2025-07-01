@@ -1,15 +1,14 @@
 <?php
-// commands/MigrationCommand.php
-namespace App\Commands;
+namespace masoud4\Commands;
 
-use App\CommandInterface;
-use App\Colorizer;
-use mysqli; // Import the mysqli class
-use mysqli_sql_exception; // For stricter error handling
+use masoud4\CommandInterface;
+use masoud4\Colorizer;
+use mysqli;
+use mysqli_sql_exception; 
 
 class MigrationCommand implements CommandInterface
 {
-    private ?mysqli $mysqli = null; // Changed from PDO to mysqli
+    private ?mysqli $mysqli = null; 
     private array $config;
 
     public function getName(): string
@@ -180,7 +179,7 @@ class MigrationCommand implements CommandInterface
         $template = <<<EOT
 <?php
 
-use App\Migration; // Make sure this namespace is correct for your base Migration class
+use masoud4\Migration; 
 
 class {$className} extends Migration
 {
@@ -289,7 +288,7 @@ EOT;
                 require_once $migrationsPath . $file;
 
                 if (!in_array($file, $executedMigrations)) {
-                    if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\App\MigrationInterface::class)) {
+                    if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\masoud4\MigrationInterface::class)) {
                         $migration = new $className($mysqli); // Pass mysqli to migration constructor
                         echo Colorizer::blue("Running migration: " . Colorizer::bold($file)) . PHP_EOL;
                         try {
@@ -401,7 +400,7 @@ EOT;
             if (file_exists($filePath)) {
                 require_once $filePath; // Ensure the class is loaded
 
-                if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\App\MigrationInterface::class)) {
+                if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\masoud4\MigrationInterface::class)) {
                     $migration = new $className($mysqli); // Pass mysqli to migration constructor
                     echo Colorizer::blue("Rolling back: " . Colorizer::bold($file)) . PHP_EOL;
                     try {
@@ -473,7 +472,7 @@ EOT;
             if (file_exists($filePath)) {
                 require_once $filePath;
 
-                if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\App\MigrationInterface::class)) {
+                if (class_exists($className) && (new \ReflectionClass($className))->implementsInterface(\masoud4\MigrationInterface::class)) {
                     $migration = new $className($mysqli);
                     echo Colorizer::blue("Rolling back: " . Colorizer::bold($file)) . PHP_EOL;
                     try {

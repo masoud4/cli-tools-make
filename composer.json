@@ -1,10 +1,10 @@
 {
-    "name": "classic/tools",
+    "name": "masoud4/tools",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "App\\": "src/",
-            "App\\Commands\\": "commands/"
+            "masoud4\\": "src/",
+            "masoud4\\Commands\\": "commands/"
         }
     },
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 // src/Colorizer.php
-namespace App;
+namespace masoud4;
 
 class Colorizer
 {

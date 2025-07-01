@@ -1,6 +1,6 @@
 <?php
 
-use App\Migration; // Make sure this namespace is correct for your base Migration class
+use masoud4\Migration; // Make sure this namespace is correct for your base Migration class
 // No need for 'use mysqli;' here, as you access it via $this->mysqli from the base Migration class.
 
 class Migration_2025_06_28_092041_Createuserstable1 extends Migration

@@ -1,6 +1,5 @@
 <?php
-// src/CliApp.php
-namespace App;
+namespace masoud4;
 
 use ReflectionClass;
 use Throwable;
@@ -103,7 +102,7 @@ class CliApp
                 if (pathinfo($file, PATHINFO_EXTENSION) === 'php') {
                     $className = pathinfo($file, PATHINFO_FILENAME);
                     // Assuming PSR-4 namespace App\Commands\ for command files
-                    $fullClassName = "App\\Commands\\" . $className;
+                    $fullClassName = "masoud4\\Commands\\" . $className;
 
                     // Check if the class exists and implements CommandInterface
                     if (class_exists($fullClassName)) {

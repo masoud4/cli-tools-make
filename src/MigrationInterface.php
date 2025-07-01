@@ -1,5 +1,5 @@
 <?php
-namespace App;
+namespace masoud4;
 
 interface MigrationInterface
 {

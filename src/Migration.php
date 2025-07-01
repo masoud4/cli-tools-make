@@ -1,6 +1,6 @@
 <?php
 // src/Migration.php
-namespace App;
+namespace masoud4;
 
 use mysqli;
 

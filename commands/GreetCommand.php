@@ -1,9 +1,9 @@
 <?php
 // commands/GreetCommand.php
-namespace App\Commands;
+namespace masoud4\Commands;
 
-use App\CommandInterface;
-use App\Colorizer;
+use masoud4\CommandInterface;
+use masoud4\Colorizer;
 
 class GreetCommand implements CommandInterface
 {

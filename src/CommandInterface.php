@@ -1,6 +1,6 @@
 <?php
 // src/CommandInterface.php
-namespace App;
+namespace masoud4;
 
 interface CommandInterface
 {
